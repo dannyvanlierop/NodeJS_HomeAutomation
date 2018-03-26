@@ -28,7 +28,7 @@ exports.fetchInfo = function(){
   //process.stdout.write('\n' + " Fetch Light Info...");
   for ( x = 0; x < iArrayLightConnected.length; x++ ){ 
     //process.stdout.write(" #" + x + "...");
-    light.getInfo(iArrayLightConnected[x]);
+    light.getInfo(iArrayLightConnected[x]); 
   }
 }
 

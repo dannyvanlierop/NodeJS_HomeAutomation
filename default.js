@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-process.stdout.write( '\n' + " Start: " + '\n' );
-
 function VariablesDefault(){
   
-  process.stdout.write( '\n' + " initialize Main ");
+  process.stdout.write( '\n' + "initialize HomeAutomation");
   
   pathroot = '/root/scripts/HomeAutomation/';
   pathconfig = pathroot + './config/';
@@ -16,12 +14,12 @@ function VariablesDefault(){
   module.exports = require( pathlib + './init.js');
   module.exports = require( pathresources + './init.js');
   module.exports = require( pathsrc + './init.js');
+
+  process.stdout.write( '\n' + " initialize Done!.. " + '\n' );
 };
-module.exports = VariablesDefault();	
+module.exports = VariablesDefault();
+//Everything runs from this function
 
-console.log(" ");
-
-//Everything runs from this function 
 var myInit = function() {
 
   counter++;
@@ -39,6 +37,5 @@ var myInit = function() {
   //}
   process.stdout.write('.');
   setTimeout(myInit, 100);
-  
 };
-setTimeout(myInit, 8000);	//myInit();
+setTimeout(myInit, 8000);
