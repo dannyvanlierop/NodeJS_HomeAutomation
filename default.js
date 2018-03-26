@@ -25,8 +25,8 @@ var myInit = function() {
   counter++;
   
   if ( ( counter % 10 ) == 0 ){
-    sensor.fetchInfo();
-    light.fetchInfo();
+    //sensor.fetchInfo();
+    //light.fetchInfo();
   }
 
   //if ( iArraySensorTemperature[6] !== undefined ){
@@ -35,6 +35,8 @@ var myInit = function() {
 	//    process.stdout.write('\n' + "Last: " + sArraySensorLastupdated[5] + " Button: " + iArraySensorButtonEvent[5] + " Temp: " + iArraySensorTemperature[6]);
   //  }
   //}
+
+  //light.getManufacturerName(1);
   process.stdout.write('.');
   setTimeout(myInit, 100);
 };
