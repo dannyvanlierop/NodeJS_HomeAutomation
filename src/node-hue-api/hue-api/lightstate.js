@@ -45,7 +45,7 @@ module.exports.isLightState = function (obj) {
 };
 
 State.prototype.payload = function () {
-    return JSON.parse(JSON.stringify(this._values));
+    return JSON.parse(JSON.stringify(this_values));
 };
 
 /**
@@ -53,7 +53,7 @@ State.prototype.payload = function () {
  * @returns {State}
  */
 State.prototype.reset = function () {
-    this._values = {};
+    this_values = {};
     return this;
 };
 State.prototype.clear = State.prototype.reset;
@@ -64,7 +64,7 @@ State.prototype.clear = State.prototype.reset;
  */
 State.prototype.copy = function () {
     var copy = new State();
-    copy._addValues(this._values);
+    copy._addValues(this_values);
     return copy;
 };
 
@@ -393,7 +393,7 @@ State.prototype.rgb = function (r, g, b) {
 };
 
 State.prototype.hasRGB = function () {
-    return !!this._values.rgb;
+    return !!this_values.rgb;
 };
 
 State.prototype.colorLoop = function () {
@@ -416,7 +416,7 @@ State.prototype.applyRGB = function (modelid) {
 
     if (this.hasRGB()) {
         result = this.copy();
-        result.xy(rgb.convertRGBtoXY(this._values.rgb, modelid));
+        result.xy(rgb.convertRGBtoXY(this_values.rgb, modelid));
     }
 
     return result;
@@ -425,7 +425,7 @@ State.prototype.applyRGB = function (modelid) {
 ///////////////////////////////////////////////////////////////////////
 
 State.prototype._addValues = function () {
-    var state = this._values;
+    var state = this_values;
 
     Array.prototype.slice.apply(arguments).forEach(function (stateValue) {
         utils.combine(state, stateValue);
@@ -433,7 +433,7 @@ State.prototype._addValues = function () {
 };
 
 State.prototype._removeValues = function () {
-    var state = this._values;
+    var state = this_values;
 
     Array.prototype.slice.apply(arguments).forEach(function (key) {
         delete state[key];

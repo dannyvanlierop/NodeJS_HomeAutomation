@@ -55,12 +55,12 @@ exports.getInfo = function( iSensorNumber,sValue){
     //Output all attributes found
     } else { 
         
-        if (!fs.existsSync( pathhuesensor + "./.values/" + iSensorNumber + + "/" + "./state")) {
-                exec( "/bin/mkdir -p " +  pathhuesensor + "./.values/" + iSensorNumber + "/" + "./state" );
+        if (!fs.existsSync( pathhuesensor + "./_values/" + iSensorNumber + + "/" + "./state")) {
+                exec( "/bin/mkdir -p " +  pathhuesensor + "./_values/" + iSensorNumber + "/" + "./state" );
         }
 
-        if (!fs.existsSync(  pathhuesensor + "./.values/" + iSensorNumber + "/" + "./config" )) {
-                exec( "/bin/mkdir -p " +  pathhuesensor + "./.values/" + iSensorNumber + "/" + "./config" );
+        if (!fs.existsSync(  pathhuesensor + "./_values/" + iSensorNumber + "/" + "./config" )) {
+                exec( "/bin/mkdir -p " +  pathhuesensor + "./_values/" + iSensorNumber + "/" + "./config" );
         }
         
         client.getSensor( iSensorNumber, function( err, result ){ 

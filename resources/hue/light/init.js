@@ -2,7 +2,7 @@
 
 process.stdout.write( '\n' + " initialize Resources-Hue-Light ");
 
-module.exports = pathhuelightvalues = pathhuelight + './.values/';
+module.exports = pathhuelightvalues = pathhuelight + './_values/';
 module.exports = require( pathhuelightvalues + './init.js');
 
  

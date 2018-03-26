@@ -2,7 +2,7 @@
 
 process.stdout.write( '\n' + " initialize Resources-Hue-Sensor ");
 
-module.exports = pathhuesensorvalues = pathhuesensor + './.values/';
+module.exports = pathhuesensorvalues = pathhuesensor + './_values/';
 module.exports = require( pathhuesensorvalues + './init.js');
 
 function VariablesSensor(){
