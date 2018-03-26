@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      "hue-sdk",
+      "/root"
+    ]
+  ],
+  "_from": "hue-sdk@latest",
+  "_id": "hue-sdk@0.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hue-sdk",
+  "_nodeVersion": "7.5.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/hue-sdk-0.0.3.tgz_1504468264057_0.6380403516814113"
+  },
+  "_npmUser": {
+    "email": "dave@daveeddy.com",
+    "name": "bahamas10"
+  },
+  "_npmVersion": "4.1.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "hue-sdk",
+    "raw": "hue-sdk",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/hue-sdk/-/hue-sdk-0.0.3.tgz",
+  "_shasum": "ba74a7130e20370948e3c152262f5cbeb199f631",
+  "_shrinkwrap": null,
+  "_spec": "hue-sdk",
+  "_where": "/root",
+  "author": {
+    "email": "dave@daveeddy.com",
+    "name": "Dave Eddy",
+    "url": "http://www.daveeddy.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bahamas10/node-hue-sdk/issues"
+  },
+  "dependencies": {},
+  "description": "Phillips Hue API library",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "ba74a7130e20370948e3c152262f5cbeb199f631",
+    "tarball": "https://registry.npmjs.org/hue-sdk/-/hue-sdk-0.0.3.tgz"
+  },
+  "gitHead": "3cb64f33c069f87ad4257d2019695092d70976a0",
+  "homepage": "https://github.com/bahamas10/node-hue-sdk#readme",
+  "keywords": [
+    "hue",
+    "lights",
+    "phillips"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "bahamas10",
+      "email": "dave@daveeddy.com"
+    }
+  ],
+  "name": "hue-sdk",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bahamas10/node-hue-sdk.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.3"
+}

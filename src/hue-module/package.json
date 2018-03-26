@@ -1,0 +1,84 @@
+{
+  "_args": [
+    [
+      "hue-module",
+      "/root"
+    ]
+  ],
+  "_from": "hue-module@latest",
+  "_id": "hue-module@0.1.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/hue-module",
+  "_nodeVersion": "6.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/hue-module-0.1.2.tgz_1473715054667_0.30291111418046057"
+  },
+  "_npmUser": {
+    "email": "hi@chrisanderson.io",
+    "name": "pushchris"
+  },
+  "_npmVersion": "3.9.3",
+  "_phantomChildren": {
+    "debug": "2.6.9"
+  },
+  "_requested": {
+    "name": "hue-module",
+    "raw": "hue-module",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/hue-module/-/hue-module-0.1.2.tgz",
+  "_shasum": "af64345ad58d4ee8690ac20987f15ee4f458cd43",
+  "_shrinkwrap": null,
+  "_spec": "hue-module",
+  "_where": "/root",
+  "author": {
+    "name": "Chris Anderson"
+  },
+  "bugs": {
+    "url": "https://github.com/pushchris/hue-module/issues"
+  },
+  "dependencies": {
+    "follow-redirects": "0.0.6"
+  },
+  "description": "A client library for interacting with the Philips Hue lighting products",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "af64345ad58d4ee8690ac20987f15ee4f458cd43",
+    "tarball": "https://registry.npmjs.org/hue-module/-/hue-module-0.1.2.tgz"
+  },
+  "gitHead": "dee9fa1ecedfa42c4ae550339eb6e65dc09afd50",
+  "homepage": "https://github.com/pushchris/hue-module#readme",
+  "keywords": [
+    "Hue",
+    "Lighting",
+    "Philips"
+  ],
+  "license": "Beerware",
+  "main": "lib/hue.js",
+  "maintainers": [
+    {
+      "name": "pushchris",
+      "email": "hi@chrisanderson.io"
+    }
+  ],
+  "name": "hue-module",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushchris/hue-module.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.2"
+}
