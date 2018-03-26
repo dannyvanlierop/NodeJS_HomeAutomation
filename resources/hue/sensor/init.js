@@ -2,6 +2,9 @@
 
 process.stdout.write( '\n' + " initialize Resources-Hue-Sensor ");
 
+module.exports = pathhuesensorvalues = pathhuesensor + './.values/';
+module.exports = require( pathhuesensorvalues + './init.js');
+
 function VariablesSensor(){
     
  // ##############
@@ -53,20 +56,3 @@ function VariablesSensor(){
   sensor.fetchInfo();
 };
 VariablesSensor();
-
-
-
-//module.exports = require( pathsensor + './sensor.js');
-
-
-//module.exports = pathroot = '/root/scripts/HomeAutomation/';       //  sVariableName = typeof sVariableName !== undefined ? sVariableName : "DefaultStartValue";
-//module.exports = pathconfig = pathroot + './config/';
-//module.exports = pathresources = pathroot + './resources/';
-//module.exports = pathlib = pathroot + './lib/';
-//module.exports = pathsrc = pathroot + './src/';
-//
-//
-//module.exports = require( pathconfig + './init.js');
-//module.exports = require( pathlib + './init.js');
-//module.exports = require( pathresources + './init.js');
-//module.exports = require( pathsrc + './init.js');
