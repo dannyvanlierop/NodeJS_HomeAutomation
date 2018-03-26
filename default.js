@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 process.stdout.write( '\n' + " Start: " + '\n' );
-//init = require('./init.js');
-//init.Variables();
-//init();
 
 function VariablesDefault(){
   
