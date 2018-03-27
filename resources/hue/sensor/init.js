@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-process.stdout.write( '\n' + " initialize Resources-Hue-Sensor ");
-
-module.exports = pathhuesensorvalues = pathhuesensor + './_values/';
-module.exports = require( pathhuesensorvalues + './init.js');
-
 function VariablesSensor(){
-    
- // ##############
- // #   Sensors  #
- // ##############
 
-  sensor = require('./sensor.js');
+  process.stdout.write( '\n' + " initialize Resources-Hue-Sensor ");
+
+  module.exports = pathhuesensorvalues = pathhuesensor + './_values/';
+  module.exports = require( pathhuesensorvalues + './init.js');
+
+  sensor = require('./sensor.js');  
+
+  /***************
+  *    Sensors   *
+  ***************/
   iArraySensorConnected = [1, 2, 5, 6, 7, 8, 9, 10, 11];        //i++; if ( i == 3 ){ i = 5; } else if ( i == 11 ){ i = 1; } sensor.getInfo(i);
  
   //sensor.getLightLevel(8);
@@ -54,5 +54,7 @@ function VariablesSensor(){
   sArraySensorPending = [''];               //if (typeof sArraySensorPending[i]           !== undefined){ process.stdout.write(" " + sArraySensorPending[i]); };    
 
   //sensor.fetchInfo();
+  sensor.getInfoAll();
+  //sensor.changeSensorConfig();
 };
 VariablesSensor();

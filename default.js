@@ -24,10 +24,11 @@ var myInit = function() {
 
   counter++;
   
-  if ( ( counter % 10 ) == 0 ){
+  if ( ( counter % 25 ) == 0 ){
     //sensor.fetchInfo();
     //light.fetchInfo();
   }
+
 
   //if ( iArraySensorTemperature[6] !== undefined ){
   //  if ( ( counter % 10 ) == 0 ){
@@ -41,3 +42,6 @@ var myInit = function() {
   setTimeout(myInit, 100);
 };
 setTimeout(myInit, 8000);
+
+
+
