@@ -13,7 +13,6 @@ debug = false;
 //# From/To script            # not needed
 
 
-
 /** getInfo **/
 //get all attributes for 1 light from hue to script-variables
 //###############################################################################################################################################################################
@@ -58,7 +57,6 @@ exports.getInfoAll = function(){
     light.getInfo(iArrayLightConnected[x]); 
   }
 }
-
 
 /** setInfo **/
 //sets all attributes from 1 light from script-variables to hue
