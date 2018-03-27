@@ -2,11 +2,81 @@
 
 debug = false;
 
+//# Situation:                # Function:
+//#################################################################
+//# Hue To Scriptvar          # getInfo, getInfoAll
+//# Scriptvar to Hue          # setInfo, setInfoAll
+//# From Hue                  # get[Variable], get[Variable]]All
+//# To Hue                    # set[Variable], set[Variable]]All
+//# From disk                 # loadInfo, loadInfoALL
+//# To disk                   # saveInfo, saveInfoAll
+//# From/To script            # not needed
+
+
+/** getInfo **/
+//get all attributes for 1 sesnsor from hue to script-variables
+exports.getInfo = function( iSensorNumber,sValue){
+  client.getSensor( iSensorNumber, function( err, result ){ 
+
+    if ( err || result === undefined || result.state === undefined ){ return err;}
+    
+    //General:
+    if ( typeof result.manufacturername !== undefined             ){ sArraySensorManufacturerName[iSensorNumber] = result.manufacturername;    };  // light.getManufacturerName( iSensorNumber );     
+    if ( typeof result.productname !== undefined                  ){ sArraySensorProductname[iSensorNumber] = result.productname;              };  // light.getModelId( iSensorNumber );              
+    if ( typeof result.modelid !== undefined                      ){ sArraySensorModelid[iSensorNumber] = result.modelid;                      };  // light.getModelId( iSensorNumber );              
+    if ( typeof result.name !== undefined                         ){ sArraySensorName[iSensorNumber] = result.name;                            };  // light.getName( iSensorNumber );                 
+    if ( typeof result.swversion !== undefined                    ){ sArraySensorSwVersion[iSensorNumber] = result.swversion;                  };  // light.getSwVersion( iSensorNumber );            
+    if ( typeof result.type !== undefined                         ){ sArraySensorType[iSensorNumber] = result.type;                            };  // light.getType( iSensorNumber );                 
+    if ( typeof result.uniqueid !== undefined                     ){ sArraySensorUniqueid[iSensorNumber] = result.uniqueid;                    };  // light.getUniqueid( iSensorNumber );             
+                                                                                                                                            
+    //State:
+    if ( typeof result.state.lightlevel !== undefined ){        iArraySensorLightLevel[iSensorNumber] = result.state.lightlevel;               };
+    if ( typeof result.state.dark !== undefined ){              bArraySensorDark[iSensorNumber] = result.state.dark;                           };
+    if ( typeof result.state.daylight !== undefined ){          bArraySensorDaylight[iSensorNumber] = result.state.daylight;                   };
+    if ( typeof result.state.status !== undefined ){            iArraySensorStatus[iSensorNumber] = result.state.status;                       };
+    if ( typeof result.state.lastupdated !== undefined ){       sArraySensorLastupdated[iSensorNumber] = result.state.lastupdated;             };
+    if ( typeof result.state.presence !== undefined ){          bArraySensorPresence[iSensorNumber] = result.state.presence;                   };
+    if ( typeof result.state.temperature !== undefined ){       iArraySensorTemperature[iSensorNumber] = result.state.temperature;             };
+
+    //Config:
+    if ( typeof result.config.on !== undefined ){               bArraySensorOn[iSensorNumber] = result.config.on;                              };
+    if ( typeof result.config.battery  !== undefined ){         iArraySensorBattery[iSensorNumber] = result.config.battery;                    };
+    if ( typeof result.config.configured !== undefined ){       bArraySensorConfigured[iSensorNumber] = result.config.configured;              };
+    if ( typeof result.config.reachable !== undefined ){        bArraySensorReachable[iSensorNumber] = result.config.reachable;                };
+    if ( typeof result.config.alert !== undefined ){            sArraySensorAlert[iSensorNumber] = result.config.alert;                        };
+    if ( typeof result.config.tholddark !== undefined ){        iArraySensorTholdDark[iSensorNumber] = result.config.tholddark;                };
+    if ( typeof result.config.tholdoffset !== undefined ){      iArraySensorTholdOffset[iSensorNumber] = result.config.tholdoffset;            };
+    if ( typeof result.config.ledindication !== undefined ){    bArraySensorLedindication[iSensorNumber] = result.config.ledindication;        };
+    if ( typeof result.config.usertest !== undefined ){         bArraySensorUsertest[iSensorNumber] = result.config.usertest;                  };
+    if ( typeof result.config.sensitivity !== undefined ){      iArraySensorSensitivity[iSensorNumber] = result.config.sensitivity;            };
+    if ( typeof result.config.sensitivitymax !== undefined ){   iArraySensorSensitivityMax[iSensorNumber] = result.config.sensitivitymax;      };
+    if ( typeof result.config.sunsetoffset !== undefined ){     iArraySensorSunsetoffset[iSensorNumber] = result.config.sunsetoffset;          };
+    if ( typeof result.config.sunriseoffset !== undefined ){    iArraySensorSunriseoffset[iSensorNumber] = result.config.sunriseoffset;        };
+    if ( typeof result.config.pending !== undefined ){          sArraySensorPending[iSensorNumber] = result.config.pending;                    };
+
+    //Recycle:
+    if ( typeof result.recycle !== undefined                      ){ bArraySensorRecycle[iSensorNumber] = result.recycle;                      };  // sensor.getRecycle( iSensorNumber );  
+
+  });
+};
+
+/** getInfo - ALL**/
+//get all attributes for all sensors from hue to script-variables
+exports.getInfoAll = function(){
+  //process.stdout.write('\n' + " Fetch Sensor Info...");
+  for ( x = 0; x < iArraySensorConnected.length; x++ ){ 
+    sensor.getInfo(iArraySensorConnected[x]); 
+  }
+}
+
+
+
+
 exports.getName = function( iSensorNumber ){                client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.name === undefined ) return err;                 sArraySensorName[iSensorNumber] = result.state.name;                            });};    //if ( debug ){ console.log(`    Name:             ${result.name}`);                    }; });};
 exports.getType= function( iSensorNumber ){                 client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.type === undefined ) return err;                 sArraySensorType[iSensorNumber] = result.state.type;                            });};    //if ( debug ){ console.log(`    Type:             ${result.type}`);                    }; });};
 exports.getModelId = function( iSensorNumber ){             client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.modelid === undefined ) return err;              sArraySensorModelId[iSensorNumber] = result.state.modelid;                      });};    //if ( debug ){ console.log(`    ModelId:          ${result.modelid}`);                }; });};
 exports.getManufacturername = function( iSensorNumber ){    client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.manufacturername === undefined ) return err;     sArraySensorManufacturerName[iSensorNumber] = result.state.manufacturername;    });};    //if ( debug ){ console.log(`    Manufacturername: ${result.manufacturername}`);        }; });};
-exports.getSwversion = function( iSensorNumber ){           client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.swversion === undefined ) return err;            sArraySensorSwversion[iSensorNumber] = result.state.swversion;                  });};    //if ( debug ){ console.log(`    Swversion:        ${result.swversion}`);                }; });};
+exports.getSwversion = function( iSensorNumber ){           client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.swversion === undefined ) return err;            sArraySensorSwVersion[iSensorNumber] = result.state.swversion;                  });};    //if ( debug ){ console.log(`    Swversion:        ${result.swversion}`);                }; });};
 exports.getUniqueid = function( iSensorNumber ){            client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.uniqueid === undefined ) return err;             sArraySensorUniqueId[iSensorNumber] = result.state.uniqueid;                    });};    //if ( debug ){ console.log(`    Uniqueid:         ${result.uniqueid}`);                }; });};
 exports.getRecycle = function( iSensorNumber ){             client.getSensor( iSensorNumber, function( err, result ){     if ( err || typeof result.state.recycle === undefined ) return err;              bArraySensorRecycle[iSensorNumber] = result.state.recycle;                      });};    //if ( debug ){ console.log(`    Recycle:          ${result.recycle}`);                }; });};
 
@@ -73,7 +143,7 @@ exports.getInfo = function( iSensorNumber,sValue){
             if ( typeof result.type !== undefined ){                     sArraySensorType[iSensorNumber] = result.type;                                };    //if ( debug ){ console.log(`    Type:             ${result.type}`) }; };
             if ( typeof result.modelid !== undefined ){                  sArraySensorModelId[iSensorNumber] = result.modelid;                          };    //if ( debug ){ console.log(`    ModelId:          ${result.modelid}`) }; };
             if ( typeof result.manufacturername !== undefined ){         sArraySensorManufacturerName[iSensorNumber] = result.manufacturername;        };    //if ( debug ){ console.log(`    Manufacturername: ${result.manufacturername}`) }; };
-            if ( typeof result.swversion !== undefined ){                sArraySensorSwversion[iSensorNumber] = result.swversion;                      };    //if ( debug ){ console.log(`    Swversion:        ${result.swversion}`) }; };
+            if ( typeof result.swversion !== undefined ){                sArraySensorSwVersion[iSensorNumber] = result.swversion;                      };    //if ( debug ){ console.log(`    Swversion:        ${result.swversion}`) }; };
             if ( typeof result.uniqueid !== undefined ){                 sArraySensorUniqueId[iSensorNumber] = result.uniqueid;                        };    //if ( debug ){ console.log(`    Uniqueid:         ${result.uniqueid}`) }; };
             if ( typeof result.recycle !== undefined ){                  bArraySensorRecycle[iSensorNumber] = result.recycle;                          };    //if ( debug ){ console.log(`    Recycle:          ${result.recycle}`) }; };
     

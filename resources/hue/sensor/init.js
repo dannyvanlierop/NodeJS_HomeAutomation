@@ -23,7 +23,7 @@ function VariablesSensor(){
   sArraySensorType = [''];                  //if (typeof sArraySensorType[i]               !== undefined){ process.stdout.write(" " + sArraySensorType[i]); };
   sArraySensorModelId = [''];               //if (typeof sArraySensorModelId[i]            !== undefined){ process.stdout.write(" " + sArraySensorModelId[i]); };
   sArraySensorManufacturerName = [''];      //if (typeof sArraySensorManufacturerName[i]   !== undefined){ process.stdout.write(" " + sArraySensorManufacturerName[i]); };
-  sArraySensorSwversion = [''];             //if (typeof sArraySensorSwversion[i]          !== undefined){ process.stdout.write(" " + sArraySensorSwversion[i]); };
+  sArraySensorSwVersion = [''];             //if (typeof sArraySensorSwVersion[i]          !== undefined){ process.stdout.write(" " + sArraySensorSwVersion[i]); };
   sArraySensorUniqueId = [''];              //if (typeof sArraySensorUniqueId[i]           !== undefined){ process.stdout.write(" " + sArraySensorUniqueId[i]); };
   bArraySensorRecycle = [''];               //if (typeof bArraySensorRecycle[i]            !== undefined){ process.stdout.write(" " + bArraySensorRecycle[i]); };
 
@@ -53,6 +53,6 @@ function VariablesSensor(){
   iArraySensorSunriseoffset = [''];         //if (typeof iArraySensorSunriseoffset[i]     !== undefined){ process.stdout.write(" " + iArraySensorSunriseoffset[i]); };
   sArraySensorPending = [''];               //if (typeof sArraySensorPending[i]           !== undefined){ process.stdout.write(" " + sArraySensorPending[i]); };    
 
-  sensor.fetchInfo();
+  //sensor.fetchInfo();
 };
 VariablesSensor();
