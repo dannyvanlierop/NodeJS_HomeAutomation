@@ -4,7 +4,7 @@ function VariablesLight(){
 
   process.stdout.write( '\n' + " initialize Resources-Hue-Light ");
 
-  module.exports = pathhuelightvalues = pathhuelight + './_values/';
+  pathhuelightvalues = pathhuelight + './_values/';
   module.exports = require( pathhuelightvalues + './init.js');
 
   light = require('./light.js');      //module.exports = light = require( pathlight + './light.js');

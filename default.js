@@ -24,9 +24,13 @@ var myInit = function() {
 
   counter++;
   
-  if ( ( counter % 25 ) == 0 ){
+  if ( ( counter % 5 ) == 0 ){
+    //sensor.saveInfoAll();
+    //sensor.getInfoAll();
     //sensor.fetchInfo();
     //light.fetchInfo();
+
+    sensor.setInfo(2);
   }
 
 
@@ -39,7 +43,7 @@ var myInit = function() {
 
   //light.getManufacturerName(1);
   process.stdout.write('.');
-  setTimeout(myInit, 100);
+  setTimeout(myInit, 1000);
 };
 setTimeout(myInit, 8000);
 

@@ -32,6 +32,8 @@ Variable van disk     loadValue
 
 
 
+//if ( result.state.buttonevent !== undefined && result.state.buttonevent !== null)
+
 
 
 

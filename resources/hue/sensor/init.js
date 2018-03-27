@@ -4,7 +4,7 @@ function VariablesSensor(){
 
   process.stdout.write( '\n' + " initialize Resources-Hue-Sensor ");
 
-  module.exports = pathhuesensorvalues = pathhuesensor + './_values/';
+  pathhuesensorvalues = pathhuesensor + './_values/';
   module.exports = require( pathhuesensorvalues + './init.js');
 
   sensor = require('./sensor.js');  
@@ -53,8 +53,6 @@ function VariablesSensor(){
   iArraySensorSunriseoffset = [''];         //if (typeof iArraySensorSunriseoffset[i]     !== undefined){ process.stdout.write(" " + iArraySensorSunriseoffset[i]); };
   sArraySensorPending = [''];               //if (typeof sArraySensorPending[i]           !== undefined){ process.stdout.write(" " + sArraySensorPending[i]); };    
 
-  //sensor.fetchInfo();
   sensor.getInfoAll();
-  //sensor.changeSensorConfig();
 };
 VariablesSensor();

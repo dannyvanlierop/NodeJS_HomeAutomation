@@ -8,12 +8,13 @@ function VariablesHue(){
   client = new hue.Hue(require( pathconfig + './.credentials.json' ));
   
   pathhuebridge = pathhue + './bridge/';
-  pathhuelight = pathhue + './light/';
-  pathhuesensor = pathhue + './sensor/';
-
   module.exports = require( pathhuebridge + './init.js');
-  module.exports = require( pathhuelight + './init.js');
+ 
+  pathhuesensor = pathhue + './sensor/';
   module.exports = require( pathhuesensor + './init.js');
+ 
+  pathhuelight = pathhue + './light/';
+  module.exports = require( pathhuelight + './init.js');
   
 };
 VariablesHue();
